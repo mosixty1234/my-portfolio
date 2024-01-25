@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/c92c70a5e9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav> 
+             <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+             </ul>
+             <i class="fas fa-bars" onclick="openmenu()"></i>   
+            </nav>
+             <div class="header-text">
+                <h3>Hi, I'm Sipho Dlamini.</h3>
+                <h1>IT Support / IT Technician & Web Developer.</h1>   
+            </div>
+        </div>
+    </div>
+
+    <!-----------------about------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Motivated and detail-oriented IT management graduate with practical experience, prepared to
+                        excel in the role of an IT Technician. Adept at troubleshooting, hardware/software support, and
+                        ensuring seamless IT operations. Excited to contribute a proven track record of success and a
+                        dynamic approach to a forward-thinking IT team.</p> 
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>IT Support</span><br>Maintaining/Configuring Systems</li>
+                            <li><span>Web Developer</span><br>Developing responsive websites</li>
+                            <li><span>IT Technician</span><br>fixing hardware, software, and network issues</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>HL Setlalentoa | AUG 2022 - OCT 2022 </span><br>IT Support Technician</li>
+                                <li>Conducted diagnostic tests to identify and troubleshoot software and hardware problems.<br>Maintained accurate records of technical issues and resolutions.<br>Developed responsive and user-friendly websites using HTML, CSS, and JavaScript</li>
+
+                            <li><span>Soshangaan Primary School | MAY 2023 - DEC 2023</span><br>Educators Assistant</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>ALX Africa | FEB 2023 - Current</span><br>Software Engineering (fullstack Web developer)</li>
+                            <li><span>IIE Rosebank College | JAN 2020 - DEC 2022</span><br>Diploma in IT Management</li>
+                            <li><span>I.R Lesolang Secondary School | JAN 2017 - DEC 2019</span><br>National Senior Certificate</li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="below">
+            <h3 class="sub-title">Let's Build Something Amazing Together!</h3>
+            <p>Whether you're an individual or a business, let's collaborate to ensure your technology runs seamlessly. I'm here to provide reliable IT support tailored to your needs.<br>Ready to transform ideas into digital realms that leave an everlasting impression? Let's weave a web of wonders—where every click is a magical journey</p>
+        </div>
+    </div>
+
+<!---------------------------Services---------------------------- -->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <h2>IT Technician</h2>
+                <p>Operating Systems: Windows 10<br>
+                    Remote Support Tools: Proficient in TeamViewer for assisting end-users.<br> Hardware: Troubleshooting and maintenance.<br>
+                    Mobile Support: iOS and Android.<br>Networking: Firewall,DNS,DHCP, TCP/IP, Active Directory.<br>Software: Windows Server, Microsoft Office 365 Hyper-V Linux, Project Management</p>
+            </div>
+            <div>
+                <i class="fas fa-code"></i>
+                <h2>Web Developer</h2>
+                <p>Greetings! I'm your guy to call. A boundary-pushing web developer on a mission to turn visions into immersive online realities. In the ever-evolving landscape of the web, I thrive on creating experiences that not only meet expectations but exceed them. From sleek and responsive designs to robust and scalable back-end solutions, I bring passion, creativity, and expertise to every line of code.</p>
+                <a href="https://mosixty1234.github.io/home">learn more</a>
+            </div>
+            <div>
+                <h2>IT Support</h2>
+                <p>Understanding the basics of cloud services and integration with IT support.Efficient in troubleshooting issues remotely, ensuring minimal disruptions.Experienced in managing firewalls, antivirus software, and security measures.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-----------------------portfolio---------------------- -->
+
+<div id="portfolio">
+    <div class="container">
+        <h2 class="sub-title">My Work</h2>
+        <div class="work-list">
+             <div class="work">
+                <img src="img/work-1.png">
+                <div class="layer">
+                    <h3>Umvelingangi Safe Space and Youth Development Centre Website</h3>
+                    <p>Umvelingangi Safe Space and Youth development Centre was founded in 2019. It has help community in protecting children against bad influences of the street.It has brought change ever since it was develop,and it has created more jobs for the community.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a></i>
+                    
+                </div>
+            </div>
+            <div class="work">
+                <img src="img/work-2.png">
+                <div class="layer">
+                    <h3>HL Setlalentoa Secondary School Website Website</h3>
+                    <p>HL SETLALENTOA SECONDARY SCHOOL is public school in Garankuwa, Pretoria. The school starts with Grade 8 to Grade 12 with 29 Teachers and 672 Students.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="img/work-3.png">
+                <div class="layer">
+                    <h3>e-learning platform Website</h3>
+                    <p>Our expertly designed courses, led by experienced tutors, offer a comprehensive and engaging learning experience. What sets us apart is our forward-thinking approach, recognizing the importance of exam preparation.</p>
+                    <a href="https://mosixty1234.github.io/home"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://mosixty1234.github.io/home" class="btn">See more</a>
+    </div>
+</div>
+
+ <!---- ------------contact------------- -->
+
+ <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> scedricdlamini@gmail.com</p>
+                <P><i class="fas fa-phone-square-alt"></i> 0658958758</P>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@msiixtyciiphow8953"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/mosixty1234"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sipho-dlamini-38a0211b0"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <a href="doc/DlaminiCV.pdf"  download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+                </div>
+            </div>
+         </div>
+         <div class="copyright">
+            <p> copyright &copy 2024 | by Sipho Cedric Dlamini | All Rights reserved</p>
+    </div>
+</div>
+
+
+
+<script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+       
+        }
+        
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right ="-200px";
+        }
+ 
+         const scriptURL = 'https://script.google.com/macros/s/AKfycby6NcMwA6I05yEO0XagbkHWqIXSdJDSlOJrSMpvqxctC3XrapfUVcZQ4BJcbkMSSVU/exec'
+         const form = document.forms['submit-to-google-sheet']
+         const msg = document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent sucessfully"
+                    setTimeout(function(){
+                        msg.innerHTML =""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+
+
+    </script>
+
+</body>
+</html>
