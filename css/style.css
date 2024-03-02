@@ -352,7 +352,7 @@ nav ul li a:hover::after{
 }
 
 .social-icons a:hover{
-    color: #1495d1
+    color: #1495d1;
     transform: translate(-5px);
 }
 
