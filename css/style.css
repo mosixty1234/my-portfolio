@@ -86,6 +86,15 @@ nav ul li a:hover::after{
     font-size: 25px;
     font-weight: 300;
 }
+.animated-text {
+    animation-name: fadeIn;
+    animation-duration: 5s; /* You can adjust the animation duration here */
+    animation-iteration-count:infinite; /* How many times the animation should play */
+}   
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {color: #00ffff}
+  }
 
 /*-----------------about---------------------- */
 
