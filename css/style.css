@@ -37,7 +37,7 @@ nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
-}a
+}
 
 nav ul li a{
     color: #fff;
@@ -45,7 +45,7 @@ nav ul li a{
     font-size: 14px;
     position: relative;
 }
-a
+
 nav ul li a::after{
     content: '';
     width: 0;
