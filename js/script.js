@@ -76,19 +76,74 @@ toggleMenuButtonsOnResize();
 // Add an event listener to handle window resizing
 window.addEventListener('resize', toggleMenuButtonsOnResize);
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycby6NcMwA6I05yEO0XagbkHWqIXSdJDSlOJrSMpvqxctC3XrapfUVcZQ4BJcbkMSSVU/exec'
-         const form = document.forms['submit-to-google-sheet']
-         const msg = document.getElementById("msg")
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    msg.innerHTML = "Message sent sucessfully"
-                    setTimeout(function(){
-                        msg.innerHTML =""
-                    },5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-            })
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyCXgq3TL_Y1PDN3Fr4mRBTj35fnB4-8kaBPFOCq5p36Hby5R3aLn4dujKD-f4Lc8Kt/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById('msg');
+const submitButton = form.querySelector('button[type="submit"]');
+
+// Utility function to show messages
+function displayMessage(content, type = 'success') {
+  msg.innerHTML = content;
+  msg.style.color = type === 'success' ? 'green' : 'red';
+  setTimeout(() => {
+    msg.innerHTML = '';
+  }, 5000);
+}
+
+// Function to validate form fields
+function validateForm() {
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if (!name || !email || !message) {
+    displayMessage('Please fill in all fields.', 'error');
+    return false;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    displayMessage('Please enter a valid email address.', 'error');
+    return false;
+  }
+
+  return true;
+}
+
+// Event listener for form submission
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  if (!validateForm()) {
+    return; // Exit if validation fails
+  }
+
+  // Disable the button and show a loading message
+  submitButton.disabled = true;
+  submitButton.textContent = 'Submitting...';
+
+  try {
+    const formData = new FormData(form); // Collect form data
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.text();
+    console.log('Success:', result);
+    displayMessage('Message sent successfully!');
+    form.reset(); // Reset the form
+  } catch (error) {
+    console.error('Error!', error.message);
+    displayMessage('Failed to send message. Please try again later.', 'error');
+  } finally {
+    // Re-enable the button
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit';
+  }
+});
+
