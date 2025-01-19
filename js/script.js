@@ -4,23 +4,28 @@ function openTab(tabId) {
     const tabContents = document.querySelectorAll('.tab-content');
     const tabLinks = document.querySelectorAll('.tab-links');
 
-    // Hide all tab content and remove active class from buttons
-    tabContents.forEach((content) => {
+    // Hide all tab content and remove the active class from buttons
+    tabContents.forEach(content => {
         content.style.display = 'none';
         content.classList.remove('active');
     });
 
-    tabLinks.forEach((link) => {
+    tabLinks.forEach(link => {
         link.classList.remove('active');
     });
 
     // Show the selected tab content and mark the button as active
-    document.getElementById(tabId).style.display = 'block';
-    document.getElementById(tabId).classList.add('active');
-    document.getElementById(`${tabId}-tab`).classList.add('active');
+    const selectedTab = document.getElementById(tabId);
+    selectedTab.style.display = 'block';
+    selectedTab.classList.add('active');
+
+    const selectedTabButton = document.getElementById(`${tabId}-tab`);
+    if (selectedTabButton) {
+        selectedTabButton.classList.add('active');
+    }
 }
 
-// Default active tab (Skills)
+// Set default active tab (e.g., Skills)
 document.addEventListener('DOMContentLoaded', () => {
     openTab('skills');
 });
@@ -28,122 +33,62 @@ document.addEventListener('DOMContentLoaded', () => {
 // Responsive Improvements for Tabs
 function adjustTabsForScreenSize() {
     const tabs = document.querySelector('.tabs');
+    if (!tabs) return;
+
     if (window.innerWidth <= 768) {
         tabs.style.flexDirection = 'column';
         tabs.style.alignItems = 'center';
     } else {
         tabs.style.flexDirection = 'row';
+        tabs.style.alignItems = 'flex-start';
     }
 }
 
-// Listen for screen resizing
+// Listen for screen resizing and adjust tabs accordingly
 window.addEventListener('resize', adjustTabsForScreenSize);
 
 // Initial responsiveness check
 adjustTabsForScreenSize();
 
-// header script
+// Header Menu Functionality
+function toggleMenu(open) {
+    const sidemenu = document.getElementById('sidemenu');
+    const barsIcon = document.querySelector('.fas.fa-bars');
+    const timesIcon = document.querySelector('.fas.fa-times');
+
+    if (open) {
+        sidemenu.style.display = 'flex';
+        barsIcon.style.display = 'none';
+        timesIcon.style.display = 'block';
+    } else {
+        sidemenu.style.display = 'none';
+        barsIcon.style.display = 'block';
+        timesIcon.style.display = 'none';
+    }
+}
 
 function openmenu() {
-    if (window.innerWidth <= 767) { // Check if the screen width is for mobile
-        document.getElementById('sidemenu').style.display = 'flex';
-        document.querySelector('.fas.fa-bars').style.display = 'none';
-        document.querySelector('.fas.fa-times').style.display = 'block';
-    }
+    toggleMenu(true);
 }
 
 function closemenu() {
-    if (window.innerWidth <= 767) { // Check if the screen width is for mobile
-        document.getElementById('sidemenu').style.display = 'none';
-        document.querySelector('.fas.fa-bars').style.display = 'block';
-        document.querySelector('.fas.fa-times').style.display = 'none';
-    }
+    toggleMenu(false);
 }
 
-// Hide menu buttons on desktop by default
+// Manage visibility of menu buttons based on screen size
 function toggleMenuButtonsOnResize() {
     const isMobile = window.innerWidth <= 767;
-    const bars = document.querySelector('.fas.fa-bars');
-    const times = document.querySelector('.fas.fa-times');
+    const barsIcon = document.querySelector('.fas.fa-bars');
+    const timesIcon = document.querySelector('.fas.fa-times');
 
-    bars.style.display = isMobile ? 'block' : 'none';
-    times.style.display = isMobile ? 'none' : 'none';
+    if (!barsIcon || !timesIcon) return;
+
+    barsIcon.style.display = isMobile ? 'block' : 'none';
+    timesIcon.style.display = 'none';
 }
 
 // Initial call to set button visibility based on screen size
-toggleMenuButtonsOnResize();
+document.addEventListener('DOMContentLoaded', toggleMenuButtonsOnResize);
 
 // Add an event listener to handle window resizing
 window.addEventListener('resize', toggleMenuButtonsOnResize);
-
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyCXgq3TL_Y1PDN3Fr4mRBTj35fnB4-8kaBPFOCq5p36Hby5R3aLn4dujKD-f4Lc8Kt/exec';
-const form = document.forms['submit-to-google-sheet'];
-const msg = document.getElementById('msg');
-const submitButton = form.querySelector('button[type="submit"]');
-
-// Utility function to show messages
-function displayMessage(content, type = 'success') {
-  msg.innerHTML = content;
-  msg.style.color = type === 'success' ? 'green' : 'red';
-  setTimeout(() => {
-    msg.innerHTML = '';
-  }, 5000);
-}
-
-// Function to validate form fields
-function validateForm() {
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
-
-  if (!name || !email || !message) {
-    displayMessage('Please fill in all fields.', 'error');
-    return false;
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    displayMessage('Please enter a valid email address.', 'error');
-    return false;
-  }
-
-  return true;
-}
-
-// Event listener for form submission
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  if (!validateForm()) {
-    return; // Exit if validation fails
-  }
-
-  // Disable the button and show a loading message
-  submitButton.disabled = true;
-  submitButton.textContent = 'Submitting...';
-
-  try {
-    const formData = new FormData(form); // Collect form data
-    const response = await fetch(scriptURL, {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const result = await response.text();
-    console.log('Success:', result);
-    displayMessage('Message sent successfully!');
-    form.reset(); // Reset the form
-  } catch (error) {
-    console.error('Error!', error.message);
-    displayMessage('Failed to send message. Please try again later.', 'error');
-  } finally {
-    // Re-enable the button
-    submitButton.disabled = false;
-    submitButton.textContent = 'Submit';
-  }
-});
-

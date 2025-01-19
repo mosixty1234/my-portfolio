@@ -46,7 +46,6 @@
         <title>Personal Portfolio - Sipho Dlamini</title>
     
         <!-- For performance optimization -->
-        <link rel="preload" href="img/og-image.jpg" as="image">
         <link rel="preload" href="css/style.css" as="style">
         <link rel="preload" href="js/script.js" as="script">
     </head>
@@ -203,43 +202,101 @@
             </div>
     </div>
 </section>
-
-<!-- Contact Section -->
  
-    <div id="contact">
+    <!---- ------------contact------------- -->
+    <section id="contact">
         <div class="container">
             <h1 class="sub-title">Contact Me</h1>
             <div class="row">
                 <!-- Contact Information -->
                 <div class="contact-info">
-                    <p><i class="fas fa-paper-plane"></i> Email: scedricdlamini@gmail.com</p>
-                    <p><i class="fas fa-phone-square-alt"></i> Phone: 0658958758</p>
-                    <div class="social-icons">
-                        <a href="https://www.youtube.com/@msiixtyciiphow8953" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://github.com/mosixty1234" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/sipho-dlamini-38a0211b0" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                    <a href="doc/DlaminiCV.pdf" download class="btn">Download CV</a>
+                <p><i class="fas fa-paper-plane"></i> scedricdlamini@gmail.com</p>
+                <P><i class="fas fa-phone-square-alt"></i> 0658958758</P>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@msiixtyciiphow8953"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/mosixty1234"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sipho-dlamini-38a0211b0"><i class="fab fa-linkedin"></i></a>
                 </div>
+                <a href="doc/DlaminiCV.pdf"  download class="btn btn2">Download CV</a>
+            </div>
 
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <form id="contact-form" name="submit-to-google-sheet">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Submit</button>
-                        <p id="form-message"></p>
-                    </form>
-                    <span id="msg"></span>
+              <!-- Contact Form -->
+
+            <div class="contact-form">
+                <form form id="contact-form" name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                </div>
+                <span id="msg"></span>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 Sipho Cedric Dlamini. All Rights Reserved.</p>
-        </div>
+         </div>
+         <div class="copyright">
+            <p> copyright &copy 2024 | by Sipho Cedric Dlamini | All Rights reserved</p>
     </div>
+</div>
+
+</section>
+
+ <script>
+         const scriptURL = 'https://script.google.com/macros/s/AKfycby6NcMwA6I05yEO0XagbkHWqIXSdJDSlOJrSMpvqxctC3XrapfUVcZQ4BJcbkMSSVU/exec'
+         const form = document.forms['submit-to-google-sheet']
+         const msg = document.getElementById("msg")
           
-    
+         form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    // Select form elements and message container
+    const msg = document.getElementById('msg'); // Ensure 'msg' has this ID
+    const form = e.target;
+
+    // Display loading message
+    msg.innerHTML = "Submitting...";
+    msg.style.color = "blue"; // Optional styling for the loading state
+
+    // Validate inputs (basic example, expand as needed)
+    if (!form.checkValidity()) {
+        msg.innerHTML = "Please fill out all required fields.";
+        msg.style.color = "red";
+        return;
+    }
+
+    try {
+        const response = await fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(form)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server responded with status ${response.status}`);
+        }
+
+        // Success feedback
+        msg.innerHTML = "Message sent successfully!";
+        msg.style.color = "white";
+        setTimeout(() => {
+            msg.innerHTML = "";
+        }, 5000);
+        form.reset();
+    } catch (error) {
+        // Error feedback and retry option
+        msg.innerHTML = `Error! ${error.message} <button id="retry">Retry</button>`;
+        msg.style.color = "red";
+
+        // Add retry functionality
+        const retryButton = document.getElementById('retry');
+        retryButton.addEventListener('click', () => {
+            form.dispatchEvent(new Event('submit'));
+        });
+    }
+});
+
+
+    </script>
+      
+
 </body>
 </html>

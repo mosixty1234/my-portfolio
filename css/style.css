@@ -798,7 +798,7 @@ body {
 .sub-title {
     text-align: center;
     font-size: 2.2rem;
-    color: #13c9e9;
+    color: #3df6dd;
     margin-bottom: 1.5rem;
     position: relative;
     text-transform: uppercase;
@@ -812,7 +812,7 @@ body {
     display: block;
     width: 50px;
     height: 3px;
-    background: #007bff;
+    background: #f3f5f8;
     margin: 0.5rem auto 0;
     border-radius: 3px;
     animation: growBar 0.5s ease-in-out;
@@ -835,7 +835,7 @@ body {
     opacity: 0; /* Start hidden for animation */
     transform: translateY(20px);
     animation: slideUp 0.8s ease-in-out forwards;
-    border-bottom: 15px solid #3df6dd;
+    border-bottom: 15px solid #08b5e5;
     border-radius: 30px;
 }
 
@@ -1246,74 +1246,163 @@ body {
     /* Row Adjustment */
     .row {
         flex-direction: column;
-        gap: 20px;
+        gap: 20px; /* Add spacing between stacked elements */
+        align-items: center; /* Center-align for better presentation */
     }
 
     /* Left Section (Image) */
     .about-left {
         max-width: 100%;
-        text-align: center;
+        text-align: center; /* Center-align content for smaller screens */
     }
 
     .profile-pic {
-        width: 90%; /* Make the profile picture smaller for better fit */
+        width: 80%; /* Reduce the image size for better fit */
+        max-width: 300px; /* Prevent it from getting too large */
+        border-radius: 50%; /* Keep the circular appearance */
     }
 
     /* Right Section (Content) */
     .about-right {
-        padding: 15px; /* Reduce padding for a cleaner look */
-        margin-top: 20px;
+        padding: 15px 15px; /* Compact padding for smaller screens */
+        margin-top: 10px; /* Reduce margin for cleaner stacking */
     }
 
     .about-text {
-        font-size: 1rem; /* Reduce font size for mobile */
-        line-height: 1.2; /* Maintain readability with tighter spacing */
-        text-align: justify;
+        font-size: 1rem; /* Ensure readability */
+        line-height: 1.2; /* Reduce line spacing for closer text lines */
+        word-spacing: 0px; /* Remove extra space between words */
+        text-align: justify; /* Maintain alignment for a clean look */
+        margin-bottom: 15px; /* Space below the paragraph for separation */
     }
-
-    /* Truncate Long Text */
-    .about-text p {
-        display: -webkit-box;
-        -webkit-line-clamp: 4; /* Show up to 4 lines of text */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+    
 
     /* Section Title */
     .section-title {
-        font-size: 2rem; /* Slightly smaller font for mobile */
-        margin-top: 0;
-        word-break: break-word; /* Prevent overflow on long titles */
+        font-size: 1.8rem; /* Slightly smaller font size for mobile */
+        margin-bottom: 15px; /* Add space below the title */
+        word-break: break-word; /* Prevent text overflow */
+        text-align: center; /* Center-align section titles */
     }
 
     .section-title::after {
-        width: 40px; /* Adjust title underline for mobile */
+        width: 50px; /* Adjust underline size */
+        height: 3px; /* Keep it thin for mobile aesthetics */
+        margin: 10px auto; /* Center-align underline */
     }
 
     /* Tabs */
     .tabs {
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 10px;
+        justify-content: center; /* Center-align tabs for consistency */
+        gap: 10px; /* Add spacing between tab items */
     }
 
     .tab-links {
-        padding: 8px 15px;
-        font-size: 0.8rem;
+        padding: 10px 20px; /* Compact padding for smaller devices */
+        font-size: 0.9rem; /* Adjust font size for better visibility */
+        border-radius: 5px; /* Add subtle rounding for mobile-friendly look */
     }
 
     /* Tab Content */
     .tab-content {
-        padding: 15px;
-        font-size: 0.9rem;
-        line-height: 1.2;
-    }
+            font-size: 14px; /* Ensure readability */
+            line-height: 1.2; /* Reduce line spacing for closer text lines */
+            word-spacing: 0px; /* Remove extra space between words */
+            text-align: justify; /* Maintain alignment for a clean look */
+            margin-bottom: 15px; /* Space below the paragraph for separation */
+ }        
 
     /* Overall Section */
     #about {
-        padding: 40px 20px; /* Reduce padding for mobile */
-        border-radius: 15px;
+        padding: 30px 15px; /* Reduce overall section padding for mobile */
+        border-radius: 10px; /* Subtle rounding for smaller devices */
+        margin: 10px 0; /* Add spacing between sections */
     }
 }
 
+/* Very Small Screens (e.g., Phones) */
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 70%; /* Further reduce image size for small screens */
+    }
+
+    .about-text {
+        font-size: 0.9rem; /* Smaller text for very small devices */
+        line-height: 1.3;
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Smaller title for better fit */
+    }
+
+    .tab-links {
+        padding: 8px 15px; /* Compact tabs for phones */
+        font-size: 0.8rem; /* Adjust text size for tabs */
+    }
+
+    #about {
+        padding: 20px 10px; /* Minimize padding for better fit */
+    }
+}
+
+
+@media only screen and (max-width:600px){
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+}
+
+#msg {
+    color: #f1f1f1; /* Professional green text */
+    margin-top: -20px; /* Adjust margin to prevent overlap */
+    display: inline-block; /* More flexible alignment */
+    font-size: 1.3rem; /* Emphasized font size */
+    font-weight: bold; /* Improved visibility */
+    text-align: center; /* Center-align the text */
+    padding: 15px 20px; /* Adequate padding for spacing */
+    border-radius: 12px; /* More rounded corners for modern aesthetics */
+    background: linear-gradient(135deg, #a09cb1, #928dab); /* Subtle gradient */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add soft shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+    cursor: pointer; /* Indicates interactivity */
+    backdrop-filter: blur(8px); /* Balanced blur effect for smoothness */
+    border: 2px solid transparent; /* Border for hover enhancement */
+    width: fit-content; /* Adaptive width for dynamic messages */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#msg:hover {
+    transform: scale(1.1) rotate(1deg); /* Slightly larger scaling and rotation */
+    border-color: rgba(22, 239, 255, 0.8); /* Highlight with a vibrant border */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    background: linear-gradient(135deg, #928dab, #a09cb1); /* Reversed gradient for subtle effect */
+}
+
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    #msg {
+        font-size: 1rem; /* Reduce font size for smaller screens */
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        margin-top: -20px; /* Adjust margin for better positioning */
+        border-radius: 8px; /* Slightly less rounded corners */
+    }
+
+    #msg:hover {
+        transform: scale(1.02); /* Less intense hover effect on smaller screens */
+    }
+}
+
+/* Additional Media Query for Very Small Screens (e.g., phones) */
+@media (max-width: 480px) {
+    #msg {
+        font-size: 0.9rem; /* Further reduce font size for very small screens */
+        padding: 8px 10px; /* Compact padding */
+        margin-top: -10px; /* Fine-tune margin */
+    }
+}
