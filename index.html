@@ -1,302 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Personal portfolio of Sipho Dlamini - IT Support Technician, Web Developer, and IT Enthusiast.">
-        <meta name="author" content="Sipho Dlamini">
-        <meta name="keywords" content="Sipho Dlamini, IT Support, Web Development, Technician, IT Enthusiast, Portfolio">
-        <meta name="robots" content="index, follow">
-        <meta property="og:title" content="Personal Portfolio - Sipho Dlamini">
-        <meta property="og:description" content="Explore the professional portfolio of Sipho Dlamini, showcasing skills, services, and projects in IT and web development.">
-        <meta property="og:image" content="img/og-image.jpg">
-        <meta property="og:url" content="https://mosixty1234.github.io/my-portfolio">
-        <meta property="og:type" content="website">
-        <meta property="og:site_name" content="Sipho Dlamini Portfolio">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Personal Portfolio - Sipho Dlamini">
-        <meta name="twitter:description" content="Explore the professional portfolio of Sipho Dlamini, showcasing skills, services, and projects in IT and web development.">
-        <meta name="twitter:image" content="img/og-image.jpg">
-        <meta name="twitter:creator" content="@sipho_dlamini">
-        
-        <!-- Favicon -->
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-        
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="css/style.css">
-        
-        <!-- External Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-        
-        <!-- Icons -->
-        <link rel="stylesheet" href="https://kit.fontawesome.com/c92c70a5e9.js" crossorigin="anonymous">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-        
-        <!-- Viewport for responsive images -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-        
-        <!-- Web App Manifest for Progressive Web App -->
-        <link rel="manifest" href="manifest.json">
-        
-        <!-- Scripts -->
-        <script src="js/script.js" defer></script>
-        
-        <!-- Open Graph Meta Tags for better social media integration -->
-        <title>Personal Portfolio - Sipho Dlamini</title>
-    
-        <!-- For performance optimization -->
-        <link rel="preload" href="css/style.css" as="style">
-        <link rel="preload" href="js/script.js" as="script">
-    </head>
-    
-<body>
- 
-<!-- Header Section -->
-<header id="header">
-    <div class="container">
-        <!-- Navigation Menu -->
-        <nav>
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <i class="fas fa-bars" onclick="openmenu()"></i>
-            <i class="fas fa-times" onclick="closemenu()"></i>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sipho Dlamini — IT Support Technician, Software Engineer, and Web Developer. Building reliable systems and modern web experiences.">
+    <meta name="author" content="Sipho Dlamini">
+    <meta name="keywords" content="Sipho Dlamini, IT Support, Web Development, Software Engineer, Portfolio">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Sipho Dlamini — Portfolio">
+    <meta property="og:description" content="IT support, software engineering, and web development — portfolio of Sipho Dlamini.">
+    <meta property="og:image" content="img/user.jpg">
+    <meta property="og:url" content="https://mosixty1234.github.io/my-portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sipho Dlamini">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sipho Dlamini — Portfolio">
+    <meta name="twitter:description" content="IT support, software engineering, and web development.">
+    <meta name="twitter:image" content="img/user.jpg">
 
-        <!-- Header Text -->
-        <div class="header-text">
-            <h1>Hi, I'm Sipho Dlamini</h1>
-            <p>IT Technician | Software Engineer | Web Developer</p>
-            <p>
-                Welcome to my portfolio! I specialize in crafting modern, efficient, and scalable software solutions. 
-                With expertise in web development, system troubleshooting, and engineering innovative IT solutions, 
-                I aim to bring your ideas to life.
-            </p>
-            <!-- Buttons -->
-            <button onclick="location.href='#contact'">Hire Me</button>
-            <button onclick="location.href='#portfolio'">View My Work</button>
+    <title>Sipho Dlamini — Portfolio</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body class="is-loading">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-brand">Sipho Dlamini</div>
+        <div class="loader-bar"><span></span></div>
+    </div>
+
+    <div class="noise" aria-hidden="true"></div>
+    <div class="spotlight" aria-hidden="true"></div>
+
+    <div class="cursor" aria-hidden="true">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+        <div class="cursor-label"></div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <nav class="side-dots" aria-label="Section navigation">
+        <a href="#top" data-dot="top" aria-label="Home" class="is-active"></a>
+        <a href="#about" data-dot="about" aria-label="About"></a>
+        <a href="#services" data-dot="services" aria-label="Services"></a>
+        <a href="#work" data-dot="work" aria-label="Work"></a>
+        <a href="#contact" data-dot="contact" aria-label="Contact"></a>
+    </nav>
+
+    <header class="site-header">
+        <div class="nav-bar">
+            <a href="#top" class="nav-brand">Sipho Dlamini</a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+                <a href="#about" data-section="about">About</a>
+                <a href="#services" data-section="services">Services</a>
+                <a href="#work" data-section="work">Work</a>
+                <a href="#contact" data-section="contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="top" class="hero">
+            <div class="hero-backdrop" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb--a" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb--b" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true"></div>
+
+            <div class="hero-content">
+                <p class="hero-role">
+                    <span class="hero-role-static">I work as</span>
+                    <span class="hero-role-rotator" aria-live="polite">
+                        <span class="is-active">IT Technician</span>
+                        <span>Software Engineer</span>
+                        <span>Web Developer</span>
+                    </span>
+                </p>
+                <h1 class="hero-name">
+                    <span class="line" data-letters="Sipho"></span>
+                    <span class="line" data-letters="Dlamini"></span>
+                </h1>
+                <p class="hero-lead">
+                    I keep systems running and build clean, responsive web products —
+                    from support desks to shipping sites that people actually use.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary magnetic" href="#contact" data-cursor="Hire">
+                        <span>Hire Me</span>
+                    </a>
+                    <a class="btn btn-ghost magnetic" href="#work" data-cursor="Work">
+                        <span>View My Work</span>
+                    </a>
+                </div>
+                <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+                    <span>Scroll</span>
+                    <i></i>
+                </a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-frame" data-tilt>
+                    <img src="img/user.jpg" alt="Portrait of Sipho Dlamini" width="800" height="1000" data-parallax>
+                    <div class="hero-frame-shine" aria-hidden="true"></div>
+                </div>
+                <div class="hero-badge">
+                    <span class="hero-badge-pulse"></span>
+                    Available for projects
+                </div>
+                <div class="hero-float-card" aria-hidden="true">
+                    <strong>IT + Web</strong>
+                    <span>Support · Build · Ship</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="marquee-group" aria-hidden="true">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span>
+                    <span>IT Support</span><span>Networking</span><span>Windows</span><span>Web Design</span>
+                    <span>Troubleshooting</span><span>ALX Africa</span>
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span>
+                    <span>IT Support</span><span>Networking</span><span>Windows</span><span>Web Design</span>
+                    <span>Troubleshooting</span><span>ALX Africa</span>
+                </div>
+            </div>
+            <div class="marquee marquee--reverse">
+                <div class="marquee-track">
+                    <span>Remote Support</span><span>DNS</span><span>DHCP</span><span>TCP/IP</span>
+                    <span>Responsive UI</span><span>GitHub</span><span>Systems</span><span>Cloud Basics</span>
+                    <span>Remote Support</span><span>DNS</span><span>DHCP</span><span>TCP/IP</span>
+                    <span>Responsive UI</span><span>GitHub</span><span>Systems</span><span>Cloud Basics</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Header Image -->
-        <div class="header-image">
-            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*gReLR6hZjwyBxHmfLN1AVw.gif" alt="Coding GIF">
-        </div>
-    </div>
-</header>
+        <section id="about" class="section about">
+            <div class="section-inner">
+                <header class="section-head" data-reveal>
+                    <span class="section-index">01 — About</span>
+                    <h2>Reliable systems.<br>Clean interfaces.</h2>
+                    <p>Diploma-trained IT professional focused on practical support and modern web work.</p>
+                </header>
 
-  
-<!-- About Section -->
-
-<section id="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="row">
-            <div class="about-left">
-                <img src="img/user.jpg" alt="Sipho Dlamini" class="profile-pic">
-            </div>
-            <div class="about-right">
-                <p class="about-text">
-                    Hi, I’m Sipho Dlamini, an IT professional with expertise in system maintenance, software development, and web technologies.
-                     I hold a diploma in IT Management and have hands-on experience in IT support, troubleshooting, and building responsive websites. 
-                     I excel in optimizing IT systems, resolving complex issues, and adapting to emerging technologies. Passionate about innovation, I enjoy collaborating on impactful projects and continuously advancing my skills. 
-                     I’m eager to contribute my technical expertise and problem-solving abilities to your team.
-                </p>
-                <div class="tabs">
-                    <button onclick="openTab('skills')" class="tab-links active" id="skills-tab">Skills</button>
-                    <button onclick="openTab('experience')" class="tab-links" id="experience-tab">Experience</button>
-                    <button onclick="openTab('education')" class="tab-links" id="education-tab">Education</button>
+                <div class="stats" data-reveal>
+                    <div class="stat">
+                        <span class="stat-num" data-count="3">0</span>
+                        <span class="stat-label">Featured projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="4">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years building skills</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="3">0</span>
+                        <span class="stat-label">Core service areas</span>
+                    </div>
                 </div>
-                <div class="tab-content" id="skills">
-                    <ul>
-                        <li><strong>Technical Support:</strong> Troubleshooting hardware, software, and network issues</li>
-                        <li><strong>Web Development:</strong> Building and maintaining responsive, dynamic websites</li>
-                        <li><strong>IT Systems Management:</strong> Configuring and maintaining IT infrastructure</li>
-                        <li><strong>Programming:</strong> Proficient in HTML, CSS, JavaScript, Python</li>
-                        <li><strong>Collaboration:</strong> Working with cross-functional teams to achieve project goals</li>
-                    </ul>
-                </div>
-                <div class="tab-content" id="experience" style="display: none;">
-                    <ul>
-                        <li><strong>IT Support Technician:</strong> HL Setlalentoa (2022) - Provided end-user support, maintained systems, and resolved technical issues</li>
-                        <li><strong>Educators Assistant:</strong> Soshangaan Primary School (2023-2024)</li>
-                    </ul>
-                </div>
-                <div class="tab-content" id="education" style="display: none;">
-                    <ul>
-                        <li><strong>Software Engineering Program:</strong> ALX Africa (2023)</li>
-                        <li><strong>Diploma in IT Management:</strong> Rosebank College (2022)</li>
-                        <li><strong>National Senior Certificate:</strong> I.R Lesolang Secondary School (2019)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-    <!-- Services Section -->
-<section id="services">
-    <div class="container">
-        <h2 class="services-title">My Services</h2>
-        <div class="services-list">
-            <div class="service-item">
-                <h3>IT Technician</h3>
-                <p>
-                    Operating Systems: Windows 10<br>
-                    Proficient in remote support tools (e.g., TeamViewer)<br>
-                    Networking: Firewall, DNS, DHCP, TCP/IP<br>
-                    Mobile Support: iOS and Android
-                </p>
-            </div>
+                <div class="about-grid">
+                    <p class="about-copy" data-reveal>
+                        I’m Sipho Dlamini — an IT professional with a diploma in IT Management and hands-on
+                        experience in support, troubleshooting, and building responsive websites. I optimize
+                        systems, untangle complex issues, and stay current with emerging tools. I collaborate
+                        well on impactful projects and bring steady problem-solving to every team I’m on.
+                    </p>
 
-            <div class="service-item">
-                <h3>Web Developer</h3>
-                <p>
-                    Passionate about creating sleek, responsive designs and scalable backend solutions. I thrive on exceeding client expectations through creativity and technical expertise.
-                </p>
-                <a href="https://mosixty1234.github.io/home" class="learn-more">Learn More</a>
-            </div>
+                    <div class="about-panels" data-reveal>
+                        <div class="tablist" role="tablist" aria-label="About details">
+                            <button type="button" class="tab is-active" role="tab" id="tab-skills" aria-selected="true" aria-controls="panel-skills">Skills</button>
+                            <button type="button" class="tab" role="tab" id="tab-experience" aria-selected="false" aria-controls="panel-experience">Experience</button>
+                            <button type="button" class="tab" role="tab" id="tab-education" aria-selected="false" aria-controls="panel-education">Education</button>
+                        </div>
 
-            <div class="service-item">
-                <h3>IT Support</h3>
-                <p>
-                    Proficient in cloud services, remote troubleshooting, and managing firewalls/antivirus software to ensure secure and seamless IT operations.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <!-- Portfolio Section -->
-<section id="portfolio">
-    <div class="portfolio-container">
-        <h2 class="portfolio-title">My Work</h2>
-        <div class="work-list">
-            <div class="work">
-                <img src="img/work-1.png" alt="Safe Space Project">
-                <div class="layer">
-                    <h3>Umvelingangi Safe Space and Youth Centre</h3>
-                    <p>A platform supporting youth by protecting them from bad influences and providing job opportunities within the community.</p>
-                    <a href="#" class="direct-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <div class="tab-panel is-active" role="tabpanel" id="panel-skills" aria-labelledby="tab-skills">
+                            <ul>
+                                <li><strong>Technical support</strong> — hardware, software, and network troubleshooting</li>
+                                <li><strong>Web development</strong> — responsive, maintainable front-end work</li>
+                                <li><strong>IT systems</strong> — configuring and maintaining infrastructure</li>
+                                <li><strong>Programming</strong> — HTML, CSS, JavaScript, Python</li>
+                                <li><strong>Collaboration</strong> — cross-functional delivery on real projects</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" role="tabpanel" id="panel-experience" aria-labelledby="tab-experience" hidden>
+                            <ul>
+                                <li><strong>IT Support Technician</strong> — HL Setlalentoa (2022). End-user support, system maintenance, issue resolution.</li>
+                                <li><strong>Educator’s Assistant</strong> — Soshangaan Primary School (2023–2024).</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" role="tabpanel" id="panel-education" aria-labelledby="tab-education" hidden>
+                            <ul>
+                                <li><strong>Software Engineering Program</strong> — ALX Africa (2023)</li>
+                                <li><strong>Diploma in IT Management</strong> — Rosebank College (2022)</li>
+                                <li><strong>National Senior Certificate</strong> — I.R Lesolang Secondary School (2019)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="img/work-2.png" alt="School Website">
-                <div class="layer">
-                    <h3>HL Setlalentoa Secondary School</h3>
-                    <p>A school website designed to engage students, staff, and the community with dynamic features and easy navigation.</p>
-                    <a href="#" class="direct-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="section-inner">
+                <header class="section-head" data-reveal>
+                    <span class="section-index">02 — Services</span>
+                    <h2>What I can take on</h2>
+                    <p>Practical help across support, infrastructure, and the web.</p>
+                </header>
+
+                <ul class="service-list">
+                    <li class="service-item" data-reveal data-cursor="Explore">
+                        <span class="service-num">01</span>
+                        <div class="service-icon" aria-hidden="true"><i class="fas fa-desktop"></i></div>
+                        <h3>IT Technician</h3>
+                        <p>Windows environments, remote support, networking foundations (DNS, DHCP, TCP/IP, firewalls), and mobile support for iOS and Android.</p>
+                    </li>
+                    <li class="service-item" data-reveal data-cursor="Explore">
+                        <span class="service-num">02</span>
+                        <div class="service-icon" aria-hidden="true"><i class="fas fa-code"></i></div>
+                        <h3>Web Developer</h3>
+                        <p>Sleek, responsive interfaces and dependable builds — focused on clarity, performance, and something clients are proud to ship.</p>
+                        <a class="text-link" href="https://mosixty1234.github.io/home">See related work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="service-item" data-reveal data-cursor="Explore">
+                        <span class="service-num">03</span>
+                        <div class="service-icon" aria-hidden="true"><i class="fas fa-headset"></i></div>
+                        <h3>IT Support</h3>
+                        <p>Cloud-aware troubleshooting, remote diagnostics, and hardening day-to-day operations with solid security hygiene.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="work" class="section work">
+            <div class="section-inner">
+                <header class="section-head" data-reveal>
+                    <span class="section-index">03 — Work</span>
+                    <h2>Selected projects</h2>
+                    <p>Community platforms, school sites, and learning products.</p>
+                </header>
+
+                <div class="work-list">
+                    <article class="work-item" data-reveal data-cursor="View" data-tilt-media>
+                        <div class="work-media">
+                            <img src="img/work-1.png" alt="Umvelingangi Safe Space and Youth Centre project preview" width="800" height="500" loading="lazy">
+                            <div class="work-overlay">
+                                <span>Community · Web</span>
+                            </div>
+                        </div>
+                        <div class="work-copy">
+                            <span class="work-index">01</span>
+                            <h3>Umvelingangi Safe Space and Youth Centre</h3>
+                            <p>A community platform helping youth stay clear of harmful influences and find local opportunities.</p>
+                            <div class="work-tags"><span>Community</span><span>Web platform</span></div>
+                        </div>
+                    </article>
+                    <article class="work-item" data-reveal data-cursor="View" data-tilt-media>
+                        <div class="work-media">
+                            <img src="img/work-2.png" alt="HL Setlalentoa Secondary School website preview" width="800" height="500" loading="lazy">
+                            <div class="work-overlay">
+                                <span>Education · Site</span>
+                            </div>
+                        </div>
+                        <div class="work-copy">
+                            <span class="work-index">02</span>
+                            <h3>HL Setlalentoa Secondary School</h3>
+                            <p>A school site built for students, staff, and community — clear navigation and room to grow.</p>
+                            <div class="work-tags"><span>Education</span><span>Website</span></div>
+                        </div>
+                    </article>
+                    <article class="work-item" data-reveal data-cursor="View" data-tilt-media>
+                        <div class="work-media">
+                            <img src="img/work-3.png" alt="E-learning platform preview" width="800" height="500" loading="lazy">
+                            <div class="work-overlay">
+                                <span>Learning · Product</span>
+                            </div>
+                        </div>
+                        <div class="work-copy">
+                            <span class="work-index">03</span>
+                            <h3>E-learning Platform</h3>
+                            <p>An interactive learning space with structured courses led by experienced tutors.</p>
+                            <div class="work-tags"><span>E-learning</span><span>Courses</span></div>
+                            <a class="text-link" href="https://mosixty1234.github.io/home">Open project <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="work">
-                <img src="img/work-3.png" alt="E-learning Platform">
-                <div class="layer">
-                    <h3>E-learning Platform</h3>
-                    <p>A robust platform for interactive online learning, offering expertly designed courses led by experienced tutors.</p>
-                    <a href="https://mosixty1234.github.io/home" class="direct-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="section-inner">
+                <header class="section-head" data-reveal>
+                    <span class="section-index">04 — Contact</span>
+                    <h2>Let’s build something</h2>
+                    <p>Have a role, a project, or a system that needs attention? Reach out.</p>
+                </header>
+
+                <div class="contact-grid" data-reveal>
+                    <div class="contact-meta">
+                        <a class="contact-line" href="mailto:scedricdlamini@gmail.com" data-cursor="Mail">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>
+                                <small>Email</small>
+                                scedricdlamini@gmail.com
+                            </span>
+                        </a>
+                        <a class="contact-line" href="tel:+27658958758" data-cursor="Call">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span>
+                                <small>Phone</small>
+                                065 895 8758
+                            </span>
+                        </a>
+                        <div class="socials">
+                            <a href="https://youtube.com/@mosixty1234" aria-label="YouTube" data-cursor="Go"><i class="fab fa-youtube"></i></a>
+                            <a href="https://github.com/mosixty1234" aria-label="GitHub" data-cursor="Go"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/sipho-dlamini-38a0211b0" aria-label="LinkedIn" data-cursor="Go"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <a class="btn btn-primary magnetic" href="doc/DlaminiCV.pdf" download data-cursor="CV">
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+
+                    <form class="contact-form" name="submit-to-google-sheet" novalidate>
+                        <label>
+                            <span>Name</span>
+                            <input type="text" name="Name" autocomplete="name" required placeholder="Your name">
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="Email" autocomplete="email" required placeholder="you@email.com">
+                        </label>
+                        <label>
+                            <span>Message</span>
+                            <textarea name="Message" rows="5" required placeholder="Tell me about the project or role…"></textarea>
+                        </label>
+                        <button type="submit" class="btn btn-primary magnetic" data-cursor="Send">
+                            <span>Send message</span>
+                        </button>
+                        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                    </form>
                 </div>
             </div>
-    </div>
-</section>
- 
-    <!---- ------------contact------------- -->
-    <section id="contact">
-        <div class="container">
-            <h1 class="sub-title">Contact Me</h1>
-            <div class="row">
-                <!-- Contact Information -->
-                <div class="contact-info">
-                <p><i class="fas fa-paper-plane"></i> scedricdlamini@gmail.com</p>
-                <P><i class="fas fa-phone-square-alt"></i> 0658958758</P>
-                <div class="social-icons">
-                    <a href="https://youtube.com/@mosixty1234?si=oucZ0WrqOSem7hcP"><i class="fab fa-youtube"></i></a>
-                    <a href="https://github.com/mosixty1234"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/sipho-dlamini-38a0211b0"><i class="fab fa-linkedin"></i></a>
-                </div>
-                <a href="doc/DlaminiCV.pdf"  download class="btn btn2">Download CV</a>
-            </div>
+        </section>
+    </main>
 
-              <!-- Contact Form -->
-
-            <div class="contact-form">
-                <form form id="contact-form" name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                </div>
-                <span id="msg"></span>
-                </div>
-            </div>
-         </div>
-         <div class="copyright">
-            <p> copyright &copy 2024 | by Sipho Cedric Dlamini | All Rights reserved</p>
-    </div>
-</div>
-
-</section>
-
- <script>
-         const scriptURL = 'https://script.google.com/macros/s/AKfycby6NcMwA6I05yEO0XagbkHWqIXSdJDSlOJrSMpvqxctC3XrapfUVcZQ4BJcbkMSSVU/exec'
-         const form = document.forms['submit-to-google-sheet']
-         const msg = document.getElementById("msg")
-          
-         form.addEventListener('submit', async e => {
-    e.preventDefault();
-
-    // Select form elements and message container
-    const msg = document.getElementById('msg'); // Ensure 'msg' has this ID
-    const form = e.target;
-
-    // Display loading message
-    msg.innerHTML = "Submitting...";
-    msg.style.color = "blue"; // Optional styling for the loading state
-
-    // Validate inputs (basic example, expand as needed)
-    if (!form.checkValidity()) {
-        msg.innerHTML = "Please fill out all required fields.";
-        msg.style.color = "red";
-        return;
-    }
-
-    try {
-        const response = await fetch(scriptURL, { 
-            method: 'POST', 
-            body: new FormData(form)
-        });
-
-        if (!response.ok) {
-            throw new Error(`Server responded with status ${response.status}`);
-        }
-
-        // Success feedback
-        msg.innerHTML = "Message sent successfully!";
-        msg.style.color = "white";
-        setTimeout(() => {
-            msg.innerHTML = "";
-        }, 5000);
-        form.reset();
-    } catch (error) {
-        // Error feedback and retry option
-        msg.innerHTML = `Error! ${error.message} <button id="retry">Retry</button>`;
-        msg.style.color = "red";
-
-        // Add retry functionality
-        const retryButton = document.getElementById('retry');
-        retryButton.addEventListener('click', () => {
-            form.dispatchEvent(new Event('submit'));
-        });
-    }
-});
-
-
-    </script>
-      
-
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Sipho Cedric Dlamini. All rights reserved.</p>
+        <a class="back-top magnetic" href="#top" aria-label="Back to top" data-cursor="Top"><i class="fas fa-arrow-up"></i></a>
+    </footer>
 </body>
 </html>
